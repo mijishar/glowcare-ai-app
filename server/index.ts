@@ -4,11 +4,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { errorHandler } from './middleware/errorHandler';
 import queryRouter from './routes/query';
+import analyzeRouter from './routes/analyze';
+import chatRouter from './routes/chat';
 
 dotenv.config();
 
 if (!process.env.GROQ_API_KEY) {
-  console.error('ERROR: GROQ_API_KEY environment variable is not set. Please configure it before starting the server.');
+  console.error('ERROR: GROQ_API_KEY is not set.');
   process.exit(1);
 }
 
@@ -29,6 +31,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/query', queryRouter);
+app.use('/api/analyze', analyzeRouter);
+app.use('/api/chat', chatRouter);
 
 app.use(errorHandler);
 
@@ -38,7 +42,7 @@ const server = http.createServer(app);
 server.setTimeout(30000);
 
 server.listen(PORT, () => {
-  console.log(`GlowCare AI server running on port ${PORT}`);
+  console.log(`GlowCare AI server running on port ${PORT} — vision: llama-4-scout`);
 });
 
 export default app;

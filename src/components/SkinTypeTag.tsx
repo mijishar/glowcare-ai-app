@@ -6,9 +6,10 @@ interface SkinTypeTagProps {
 
 const skinTypeConfig: Record<NonNullable<SkinType>, { emoji: string; color: string }> = {
   Dry:         { emoji: '🌵', color: 'bg-orange-100 text-orange-700 border-orange-200' },
-  Oily:        { emoji: '💧', color: 'bg-blue-100 text-blue-700 border-blue-200' },
-  Combination: { emoji: '⚖️', color: 'bg-purple-100 text-purple-700 border-purple-200' },
-  Sensitive:   { emoji: '🌸', color: 'bg-rose-100 text-rose-700 border-rose-200' },
+  Oily:        { emoji: '💧', color: 'bg-teal-100 text-teal-700 border-teal-300' },
+  Combination: { emoji: '⚖️', color: 'bg-cyan-100 text-cyan-700 border-cyan-200' },
+  Sensitive:   { emoji: '🌸', color: 'bg-pink-100 text-pink-700 border-pink-200' },
+  Normal:      { emoji: '✨', color: 'bg-green-100 text-green-700 border-green-200' },
 }
 
 export default function SkinTypeTag({ skinType }: SkinTypeTagProps) {
@@ -19,7 +20,7 @@ export default function SkinTypeTag({ skinType }: SkinTypeTagProps) {
   return (
     <span
       data-testid="skin-type-tag"
-      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold border ${config.color} shadow-sm`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold border shadow-sm ${config.color}`}
     >
       <span>{config.emoji}</span>
       {skinType} Skin Detected

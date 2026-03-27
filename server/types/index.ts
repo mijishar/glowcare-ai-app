@@ -1,4 +1,5 @@
-export type SkinType = 'Dry' | 'Oily' | 'Combination' | 'Sensitive' | null;
+export type SkinType = 'Dry' | 'Oily' | 'Combination' | 'Sensitive' | 'Normal' | null;
+export type SeverityLevel = 'low' | 'medium' | 'high' | 'none';
 
 export interface SkincareRoutine {
   morning: string[];
@@ -24,4 +25,28 @@ export interface QueryHistoryEntry {
   timestamp: number;
   input: string;
   response: AdviceResponse;
+}
+
+export interface ProductRecommendation {
+  name: string;
+  keyIngredients: string[];
+  whySuitable: string;
+  howToUse: string;
+}
+
+export interface SkinAnalysisResult {
+  skinType: SkinType;
+  acne: SeverityLevel;
+  pigmentation: SeverityLevel;
+  darkCircles: SeverityLevel;
+  healthScore: number;
+  skinSummary?: string;
+  routine?: { morning: string[]; night: string[] };
+  dos?: string[];
+  donts?: string[];
+  naturalRemedies?: string[];
+  productSuggestions?: string[];
+  productRecommendations?: ProductRecommendation[];
+  recommendations: string[];
+  dermatologistFlag: boolean;
 }
