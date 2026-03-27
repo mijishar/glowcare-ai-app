@@ -1,6 +1,6 @@
 # Building GlowCare AI: A Full-Stack AI-Powered Skincare App
 
-**Author:** [Your Name]
+**Author:** [MIJISHA.R]
 **Date:** March 27, 2026
 **Tags:** `AI` `React` `Node.js` `Skincare` `LLM` `Groq` `TypeScript` `Tailwind CSS` `Gamification` `Computer Vision`
 
